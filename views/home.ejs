@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  </head>
+
+  <body>
+    <div class="home-container">
+      <form
+        class="home-logout"
+        id="logout-form"
+        action="/user/logout"
+        method="POST"
+      >
+        <button class="home-logout-btn" type="submit">Logout</button>
+      </form>
+      <div class="home-generate-url-container">
+        <h2>
+          Simplify URL Shortening <span>Effortlessly</span>
+          <hr class="divider" />
+        </h2>
+
+        <% if (locals.id) { %>
+        <p class="home-generated-url">
+          Generated URL:
+          <a target="_blank" href="http://localhost:5005/url/<%= id %>">
+            http://localhost:5005/url/<%= id %></a
+          >
+        </p>
+        <% } %>
+        <div class="home-form-container">
+          <form action="/url" method="post">
+            <input
+              type="text"
+              name="url"
+              placeholder="Paste the original link"
+              required
+            />
+            <button class="glow-btn" type="submit">Generate</button>
+          </form>
+        </div>
+      </div>
+
+      <% if (locals.urls && locals.urls.length > 0) { %>
+      <div class="home-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>S.no.</th>
+              <th>Id</th>
+              <th>Original URL</th>
+              <th>Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% urls.forEach((url, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= url.shortId %></td>
+              <td><%= url.redirectURL %></td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

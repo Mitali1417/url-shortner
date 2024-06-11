@@ -1,0 +1,2 @@
+The reason you are accessing the login page at http://localhost:5005/login instead of http://localhost:5005/user/login is due to how the routes are defined in your staticRouter file.
+In staticRouter, router.get("/login", async (req, res) is present.
