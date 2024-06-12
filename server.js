@@ -18,7 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const mongoUri = process.env.MONGODB_URI;
-
 mongoose
   .connect(mongoUri)
   .then(() => {

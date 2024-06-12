@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/src/index.css" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
   </head>
-
   <body>
     <div class="home-container">
       <form
@@ -23,12 +22,11 @@
           Simplify URL Shortening <span>Effortlessly</span>
           <hr class="divider" />
         </h2>
-
         <% if (locals.id) { %>
         <p class="home-generated-url">
-          Generated URL:
-          <a target="_blank" href="http://localhost:5005/url/<%= id %>">
-            http://localhost:5005/url/<%= id %></a
+          Generated URL: <br>
+          <a target="_blank" href="https://url-shortner-cxtz.onrender.com/url/<%= id %>">
+            https://url-shortner-cxtz.onrender.com/url/<%= id %></a
           >
         </p>
         <% } %>
@@ -44,7 +42,6 @@
           </form>
         </div>
       </div>
-
       <% if (locals.urls && locals.urls.length > 0) { %>
       <div class="home-table-container">
         <table>

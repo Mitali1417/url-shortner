@@ -393,140 +393,6 @@ td:nth-child(4) {
 }
 
 .design-1 {
-  width: 50px;
-  height: 165px;
-  position: relative;
-}
-
-.design-1::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
-  width: 16px;
-  height: 16px;
-  background: #ff3d00;
-  border-radius: 50%;
-  animation: bounce 2s linear infinite;
-}
-
-.design-1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  height: 48px;
-  width: 48px;
-  background: #fff;
-  border-radius: 4px;
-  animation: rotate 2s linear infinite;
-}
-
-@keyframes bounce {
-  0%,
-  50%,
-  100% {
-    transform: translate(-50%, 0px);
-    height: 20px;
-  }
-
-  20% {
-    transform: translate(-25%, 85px);
-    height: 28px;
-  }
-
-  25% {
-    transform: translate(-25%, 110px);
-    height: 12px;
-  }
-
-  70% {
-    transform: translate(-75%, 85px);
-    height: 28px;
-  }
-
-  75% {
-    transform: translate(-75%, 108px);
-    height: 12px;
-  }
-}
-
-@keyframes rotate {
-  0%,
-  50%,
-  100% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(90deg);
-  }
-
-  75% {
-    transform: rotate(-90deg);
-  }
-}
-
-.design-2 {
-  position: relative;
-  width: 30rem;
-  height: 30rem;
-}
-
-.design-2:before {
-  content: "";
-  position: absolute;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  top: 50%;
-  left: 0;
-  transform: translate(-5px, -50%);
-  background: linear-gradient(to right, #fff 50%, #de3500 50%) no-repeat;
-  background-size: 200% auto;
-  background-position: 100% 0;
-  animation: colorBallMoveX 1.5s linear infinite alternate;
-}
-
-.design-2:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: #de3500;
-}
-
-@keyframes colorBallMoveX {
-  0% {
-    background-position: 0% 0;
-    transform: translate(-15px, -50%);
-  }
-
-  15%,
-  25% {
-    background-position: 0% 0;
-    transform: translate(0px, -50%);
-  }
-
-  75%,
-  85% {
-    background-position: 100% 0;
-    transform: translate(50px, -50%);
-  }
-
-  100% {
-    background-position: 100% 0;
-    transform: translate(65px, -50%);
-  }
-}
-
-.design-3 {
   position: relative;
   background: var(--orange);
   width: 60%;
@@ -577,6 +443,7 @@ td:nth-child(4) {
 }
 
 @keyframes scaleAnimation {
+
   0%,
   100% {
     transform: translateY(0);
@@ -713,7 +580,3 @@ td:nth-child(4) {
     margin-bottom: 0rem;
   }
 }
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1420px) {}
